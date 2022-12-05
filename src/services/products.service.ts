@@ -29,11 +29,11 @@ export async function createNewProduct(product: IProduct) {
 
 export async function updateProductById(
   productId: Pick<IProduct, "id">["id"],
-  product: IProduct
+  product: Partial<IProduct>
 ) {
   try {
     const response = await putRequest(
-      PRODUCT_BASE_ENDPOINT + productId,
+      PRODUCT_BASE_ENDPOINT + "/" + productId,
       product
     );
     return response;
@@ -44,7 +44,9 @@ export async function updateProductById(
 
 export async function deleteProductById(productId: Pick<IProduct, "id">["id"]) {
   try {
-    const response = await deleteRequest(PRODUCT_BASE_ENDPOINT + productId);
+    const response = await deleteRequest(
+      PRODUCT_BASE_ENDPOINT + "/" + productId
+    );
     return response;
   } catch (error) {
     console.error(error);
