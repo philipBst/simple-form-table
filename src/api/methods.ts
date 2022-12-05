@@ -7,11 +7,11 @@ export async function getRequest<T>(endpoint: string): Promise<T> {
   return await response.json();
 }
 
-export async function postRequest<T, R>(
+export async function postRequest<T>(
   endpoint: string,
   body: T,
   headers: HeadersInit = {}
-): Promise<R> {
+): Promise<T> {
   const response = await fetch(endpoint, {
     method: "POST",
     body: JSON.stringify(body),
@@ -23,11 +23,11 @@ export async function postRequest<T, R>(
   return await response.json();
 }
 
-export async function putRequest<T, R>(
+export async function putRequest<T>(
   endpoint: string,
   body: T,
   headers: HeadersInit = {}
-): Promise<R> {
+): Promise<T> {
   const response = await fetch(endpoint, {
     method: "PUT",
     body: JSON.stringify(body),
