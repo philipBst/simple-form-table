@@ -18,7 +18,7 @@ export async function getAllProducts() {
   }
 }
 
-export async function createNewProduct(product: IProduct) {
+export async function createNewProduct(product: Partial<IProduct>) {
   try {
     const response = await postRequest(PRODUCT_BASE_ENDPOINT, product);
     return response;
