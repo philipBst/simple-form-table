@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "serve": "pnpm json-server db.json"
+    "json:server": "pnpm json-server db.json"
   },
   "dependencies": {
     "@babel/core": ">=7.0.0 <8.0.0",
