@@ -10,9 +10,16 @@
     "serve": "pnpm json-server db.json"
   },
   "dependencies": {
+    "@babel/core": ">=7.0.0 <8.0.0",
+    "@chakra-ui/react": "^2.4.2",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@tanstack/react-table": "^8.7.0",
+    "framer-motion": "^7.6.19",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "zustand": "^4.1.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
