@@ -2,16 +2,16 @@ const defaultHeaders = {
   "Content-type": "application/json; charset=UTF-8",
 };
 
-export async function getRequest(endpoint: string) {
+export async function getRequest<T>(endpoint: string): Promise<T> {
   const response = await fetch(endpoint);
   return await response.json();
 }
 
-export async function postRequest<T>(
+export async function postRequest<T, R>(
   endpoint: string,
   body: T,
   headers: HeadersInit = {}
-) {
+): Promise<R> {
   const response = await fetch(endpoint, {
     method: "POST",
     body: JSON.stringify(body),
@@ -23,11 +23,11 @@ export async function postRequest<T>(
   return await response.json();
 }
 
-export async function putRequest<T>(
+export async function putRequest<T, R>(
   endpoint: string,
   body: T,
   headers: HeadersInit = {}
-) {
+): Promise<R> {
   const response = await fetch(endpoint, {
     method: "PUT",
     body: JSON.stringify(body),
@@ -39,7 +39,7 @@ export async function putRequest<T>(
   return await response.json();
 }
 
-export async function deleteRequest(endpoint: string) {
+export async function deleteRequest<T>(endpoint: string): Promise<T> {
   const response = await fetch(endpoint, {
     method: "DELETE",
   });
